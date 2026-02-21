@@ -1,0 +1,23 @@
+{
+  "name": "app",
+  "version": "0.1.1",
+  "description": "backend server",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "hello",
+    "typescript",
+    "module"
+  ],
+  "author": "Henry Edilio Ramirez Chevalier",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.2.3",
+    "typescript": "^5.2.2"
+  }
+}
