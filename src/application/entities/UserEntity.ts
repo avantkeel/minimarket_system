@@ -1,11 +1,11 @@
-import crypto from 'crypto';
 import EmailValidator from '../validators/EmailValidator/EmailValidator';
 import PasswordValidator from '../validators/PasswordValidator/PasswordValidator';
 import FirstNameValidator from '../validators/FirstNameValidator/FirstNameValidator';
 import LastNameValidator from '../validators/LastNameValidator/LastNameValidator';
+import UserId  from '../valueObjects/UserId';
 
 export class UserEntity {
-    id: string;
+    id: UserId;
     email: string;
     password: string;
     firstName: string;
@@ -13,6 +13,7 @@ export class UserEntity {
     createdAt: Date;
 
     constructor(
+        id: UserId,
         email: string,
         password: string,
         firstName: string,
@@ -23,7 +24,7 @@ export class UserEntity {
         FirstNameValidator.validate(firstName);
         LastNameValidator.validate(lastName);
 
-        this.id = crypto.randomUUID();
+        this.id = id;
         this.email = email;
         this.password = password;
         this.firstName = firstName;

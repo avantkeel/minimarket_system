@@ -1,10 +1,12 @@
 import { describe, it, expect } from 'vitest'
 import { UserEntity } from './UserEntity'
+import UserId from '../valueObjects/UserId'
 
 describe('UserEntity', () => {
 
   it('creates a user with valid data', () => {
     const user = new UserEntity(
+      new UserId(),
       'henry@example.com',
       'secret123',
       'Henry',
@@ -21,6 +23,7 @@ describe('UserEntity', () => {
 
   it('throws an error for invalid email', () => {
     expect(() => new UserEntity(
+      new UserId(),
       'henryexample.com',
       'secret123',
       'Henry',
@@ -30,6 +33,7 @@ describe('UserEntity', () => {
 
   it('throws an error for short password', () => {
     expect(() => new UserEntity(
+      new UserId(),
       'henry@example.com',
       '123',
       'Henry',
@@ -39,6 +43,7 @@ describe('UserEntity', () => {
 
   it('throws an error for empty first name', () => {
     expect(() => new UserEntity(
+      new UserId(),
       'henry@example.com',
       'secret123',
       '',
@@ -48,6 +53,7 @@ describe('UserEntity', () => {
 
   it('throws an error for empty last name', () => {
     expect(() => new UserEntity(
+      new UserId(),
       'henry@example.com',
       'secret123',
       'Henry',
