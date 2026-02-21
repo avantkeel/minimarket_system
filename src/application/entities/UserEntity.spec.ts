@@ -10,7 +10,8 @@ describe('UserEntity', () => {
       'henry@example.com',
       'secret123',
       'Henry',
-      'Ramirez'
+      'Ramirez',
+      new Date()
     )
 
     expect(user.getEmail()).toBe('henry@example.com')
@@ -27,7 +28,8 @@ describe('UserEntity', () => {
       'henryexample.com',
       'secret123',
       'Henry',
-      'Ramirez'
+      'Ramirez',
+      new Date()
     )).toThrow('Invalid email: henryexample.com')
   })
 
@@ -37,7 +39,8 @@ describe('UserEntity', () => {
       'henry@example.com',
       '123',
       'Henry',
-      'Ramirez'
+      'Ramirez',
+      new Date()
     )).toThrow('Password too short: 123')
   })
 
@@ -47,7 +50,8 @@ describe('UserEntity', () => {
       'henry@example.com',
       'secret123',
       '',
-      'Ramirez'
+      'Ramirez',
+      new Date()
     )).toThrow('First name is required')
   })
 
@@ -57,7 +61,8 @@ describe('UserEntity', () => {
       'henry@example.com',
       'secret123',
       'Henry',
-      ''
+      '',
+      new Date()
     )).toThrow('Last name is required')
   })
 
