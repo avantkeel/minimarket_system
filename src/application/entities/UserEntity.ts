@@ -2,7 +2,7 @@ import EmailValidator from '../validators/EmailValidator/EmailValidator';
 import PasswordValidator from '../validators/PasswordValidator/PasswordValidator';
 import FirstNameValidator from '../validators/FirstNameValidator/FirstNameValidator';
 import LastNameValidator from '../validators/LastNameValidator/LastNameValidator';
-import UserId  from '../valueObjects/UserId';
+import UserId from '../valueObjects/UserId';
 
 export class UserEntity {
     id: UserId;
@@ -17,7 +17,8 @@ export class UserEntity {
         email: string,
         password: string,
         firstName: string,
-        lastName: string
+        lastName: string,
+        createdAt: Date
     ) {
         EmailValidator.validate(email);
         PasswordValidator.validate(password);
@@ -29,7 +30,7 @@ export class UserEntity {
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.createdAt = new Date();
+        this.createdAt = createdAt;
     }
 
     getId() { return this.id; }
