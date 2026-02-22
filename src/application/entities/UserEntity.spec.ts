@@ -15,7 +15,7 @@ describe('UserEntity', () => {
     )
 
     expect(user.getEmail()).toBe('henry@example.com')
-    expect(user.getPassword()).toBe('secret123')
+    expect(user.getPasswordHash()).toBe('secret123')
     expect(user.getFirstName()).toBe('Henry')
     expect(user.getLastName()).toBe('Ramirez')
     expect(user.getId()).toBeDefined()
@@ -31,17 +31,6 @@ describe('UserEntity', () => {
       'Ramirez',
       new Date()
     )).toThrow('Invalid email: henryexample.com')
-  })
-
-  it('throws an error for short password', () => {
-    expect(() => new UserEntity(
-      new UserId(),
-      'henry@example.com',
-      '123',
-      'Henry',
-      'Ramirez',
-      new Date()
-    )).toThrow('Password too short: 123')
   })
 
   it('throws an error for empty first name', () => {
