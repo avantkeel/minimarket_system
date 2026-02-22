@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { UserEntity } from './UserEntity'
-import UserId from '../valueObjects/UserId'
+import UserId from '../../valueObjects/UserId'
 
 describe('UserEntity', () => {
 

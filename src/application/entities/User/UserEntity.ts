@@ -1,7 +1,7 @@
-import EmailValidator from '../validators/EmailValidator/EmailValidator';
-import FirstNameValidator from '../validators/FirstNameValidator/FirstNameValidator';
-import LastNameValidator from '../validators/LastNameValidator/LastNameValidator';
-import UserId from '../valueObjects/UserId';
+import EmailValidator from '../../validators/EmailValidator/EmailValidator';
+import FirstNameValidator from '../../validators/FirstNameValidator/FirstNameValidator';
+import LastNameValidator from '../../validators/LastNameValidator/LastNameValidator';
+import UserId from '../../valueObjects/UserId';
 
 export class UserEntity {
     id: UserId;
