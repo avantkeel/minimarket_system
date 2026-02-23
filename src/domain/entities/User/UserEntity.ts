@@ -1,10 +1,10 @@
 import EmailValidator from '../../validators/EmailValidator/EmailValidator';
 import FirstNameValidator from '../../validators/FirstNameValidator/FirstNameValidator';
 import LastNameValidator from '../../validators/LastNameValidator/LastNameValidator';
-import UserId from '../../valueObjects/UserId';
+import IdentifierInterface from '../../valueObjects/IdentifierInterface';
 
 export class UserEntity {
-    id: UserId;
+    id: IdentifierInterface;
     email: string;
     passwordHash: string;
     firstName: string;
@@ -12,7 +12,7 @@ export class UserEntity {
     createdAt: Date;
 
     constructor(
-        id: UserId,
+        id: IdentifierInterface,
         email: string,
         passwordHash: string,
         firstName: string,

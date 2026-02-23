@@ -1,10 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import UserId from './UserId';
+import IdentifierValueObject from './IdentifierValueObject';
 
 describe('UserId', () => {
 
     it('should generate a value if none is provided', () => {
-        const id = new UserId();
+        const id = new IdentifierValueObject();
 
         expect(id.getValue()).toBeTypeOf('string');
         expect(id.getValue().length).toBeGreaterThan(0);
@@ -13,7 +13,7 @@ describe('UserId', () => {
     it('should use the provided value if given', () => {
         const value = 'my-custom-id';
 
-        const id = new UserId(value);
+        const id = new IdentifierValueObject(value);
 
         expect(id.getValue()).toBe(value);
     });
@@ -21,7 +21,7 @@ describe('UserId', () => {
     it('should not change the value after creation', () => {
         const value = 'fixed-id';
 
-        const id = new UserId(value);
+        const id = new IdentifierValueObject(value);
 
         expect(id.getValue()).toBe('fixed-id');
     });

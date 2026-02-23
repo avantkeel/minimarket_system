@@ -1,7 +1,7 @@
 import crypto from 'crypto';
-import InterfaceUserId from './InterfaceUserId';
+import IdentifierInterface from './IdentifierInterface';
 
-export default class UserId implements InterfaceUserId {
+export default class IdentifierValueObject implements IdentifierInterface {
     private readonly value: string;
 
     constructor(value?: string) {
