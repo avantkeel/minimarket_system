@@ -1,7 +1,7 @@
 import EmailValidator from '../../validators/EmailValidator/EmailValidator';
 import FirstNameValidator from '../../validators/FirstNameValidator/FirstNameValidator';
 import LastNameValidator from '../../validators/LastNameValidator/LastNameValidator';
-import IdentifierInterface from '../../valueObjects/IdentifierInterface';
+import IdentifierInterface from '../../valueObjects/identifier/IdentifierInterface';
 
 export class UserEntity {
     id: IdentifierInterface;
